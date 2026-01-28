@@ -32,8 +32,8 @@ A template repository for creating new core Flows apps with best practices and C
 
 Find and replace these placeholders throughout the codebase:
 
-- `{{APP_NAME}}` - Your app name (e.g., "Slack Integration")
-- `{{APP_DESCRIPTION}}` - Brief description of your app
+- `Microsoft SQL Server` - Your app name (e.g., "Slack Integration")
+- `Interact with your Microsoft SQL Server database from Flows.` - Brief description of your app
 
 **Files to update:**
 

@@ -2,9 +2,9 @@ import { defineApp } from "@slflows/sdk/v1";
 import { blocks } from "./blocks/index";
 
 export const app = defineApp({
-  name: "{{APP_NAME}}",
+  name: "Microsoft SQL Server",
   installationInstructions:
-    "{{APP_DESCRIPTION}}\n\nTo install:\n1. Add your API key\n2. Configure the base URL if needed\n3. Start using the blocks in your flows",
+    "Interact with your Microsoft SQL Server database from Flows.\n\nTo install:\n1. Add your API key\n2. Configure the base URL if needed\n3. Start using the blocks in your flows",
 
   blocks,
 
