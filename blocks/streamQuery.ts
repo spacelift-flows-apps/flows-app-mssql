@@ -110,6 +110,7 @@ export const streamQuery: AppBlock = {
           description: "Number of rows per batch event",
           type: "number",
           required: false,
+          default: 100,
         },
       },
       async onEvent(input) {
@@ -118,7 +119,7 @@ export const streamQuery: AppBlock = {
           parameters,
           batchSize: configBatchSize,
         } = input.event.inputConfig;
-        const batchSize = (configBatchSize as number) || 100;
+        const batchSize = (configBatchSize as number);
 
         const pool = await getPool(input.app.config);
         const request = pool.request();
