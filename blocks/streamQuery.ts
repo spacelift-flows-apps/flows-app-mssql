@@ -119,7 +119,7 @@ export const streamQuery: AppBlock = {
           parameters,
           batchSize: configBatchSize,
         } = input.event.inputConfig;
-        const batchSize = (configBatchSize as number);
+        const batchSize = configBatchSize as number;
 
         const pool = await getPool(input.app.config);
         const request = pool.request();

@@ -11,8 +11,7 @@ export const executeQuery: AppBlock = {
       config: {
         query: {
           name: "SQL Query",
-          description:
-            "SQL SELECT query with optional @parameter placeholders",
+          description: "SQL SELECT query with optional @parameter placeholders",
           type: "string",
           required: true,
         },
