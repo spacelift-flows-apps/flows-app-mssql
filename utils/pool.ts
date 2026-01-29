@@ -39,7 +39,7 @@ function createPoolConfig(appConfig: any): sql.config {
     user: appConfig.username as string,
     password: appConfig.password as string | undefined,
     connectionTimeout: (appConfig.connectionTimeout as number) * 1000,
-    requestTimeout: appConfig.requestTimeout as number,
+    requestTimeout: (appConfig.requestTimeout as number) * 1000,
     pool: {
       max: 10,
       min: 0,

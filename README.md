@@ -17,7 +17,7 @@ The app requires SQL Server connection details:
 - `trustServerCertificate` - Trust the server certificate without validation, useful for self-signed certs (default: false)
 - `caCertificate` - PEM-encoded CA certificate for verifying the server certificate, e.g. AWS RDS CA bundle (optional)
 - `connectionTimeout` - Connection timeout in seconds (default: 15)
-- `requestTimeout` - Request timeout in milliseconds (default: 30000, optional)
+- `requestTimeout` - Request timeout in seconds (default: 30, optional)
 
 ## Blocks
 

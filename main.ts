@@ -75,10 +75,10 @@ export const app = defineApp({
     },
     requestTimeout: {
       name: "Request Timeout",
-      description: "Request timeout in milliseconds (0 for no timeout)",
+      description: "Request timeout in seconds (0 for no timeout)",
       type: "number",
       required: false,
-      default: 30000,
+      default: 30,
     },
   },
 
@@ -92,7 +92,7 @@ export const app = defineApp({
       user: config.username as string,
       password: config.password as string | undefined,
       connectionTimeout: (config.connectionTimeout as number) * 1000,
-      requestTimeout: config.requestTimeout as number,
+      requestTimeout: (config.requestTimeout as number) * 1000,
       pool: { max: 1 },
       options: {
         encrypt: config.encrypt as boolean,
