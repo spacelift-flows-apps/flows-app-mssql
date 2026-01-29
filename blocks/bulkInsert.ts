@@ -63,6 +63,7 @@ export const bulkInsert: AppBlock = {
         const { table, columns, rows } = input.event.inputConfig;
         const pool = await getPool(input.app.config);
 
+        const columnsArray = columns as string[];
         const rowsData = rows as any[][];
 
         if (rowsData.length === 0) {
@@ -73,13 +74,21 @@ export const bulkInsert: AppBlock = {
           return;
         }
 
+        // Validate row lengths match column count
+        const columnCount = columnsArray.length;
+        for (let i = 0; i < rowsData.length; i++) {
+          if (rowsData[i].length !== columnCount) {
+            throw new Error(
+              `Row ${i} has ${rowsData[i].length} values, expected ${columnCount} (column count)`,
+            );
+          }
+        }
+
         const request = pool.request();
 
         // Build the INSERT query with multiple value sets using parameterized queries
         // Use square brackets for column quoting (MSSQL syntax)
-        const columnsList = (columns as string[])
-          .map((col) => `[${col}]`)
-          .join(", ");
+        const columnsList = columnsArray.map((col) => `[${col}]`).join(", ");
 
         // Create placeholder sets for each row
         const valuePlaceholders: string[] = [];
